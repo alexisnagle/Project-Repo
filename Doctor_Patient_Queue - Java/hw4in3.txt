@@ -1,0 +1,20 @@
+patientArrives 0800 Zoey 1
+patientArrives 0800 Yan 1
+patientArrives 0811 Xavi 1
+patientArrives 0814 Wade 1
+doctorArrives 0816 sabrahummus 
+doctorArrives 0816 uhoh
+doctorArrives 0816 PutABandaidOn
+doctorArrives 0832 KyleIs
+patientArrives 0903 myGrade 1
+patientArrives 0905 peppapig 2
+patientArrives 0906 clinicaldeppression 4
+patientArrives 0914 Cool 3
+patientArrives 1243 Stinky 1
+patientArrives 1243 Its1057PM 2
+patientArrives 1243 Jellyfish 2
+patientArrives 1243 Mercyisdps 3
+patientArrives 1243 agunshotwound 5
+patientArrives 1243 AndPitaBread 1
+patientArrives 1243 aBrokenLeg 4
+patientArrives 0006 gary 6

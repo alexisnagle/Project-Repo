@@ -1,0 +1,12 @@
+AddEvent 010108 breakfast
+AddEvent 010118 dinner
+AddEvent 010110 mathTest
+AddEvent 010112 lunch
+AddEvent 010116 running
+AddEvent 010109 mathTest
+PrintSkipList
+CancelEvent 010109
+GetEvent 010110
+GetEvent 010118
+GetEvent 010116
+PrintSkipList

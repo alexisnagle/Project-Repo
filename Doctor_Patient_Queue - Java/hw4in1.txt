@@ -1,0 +1,4 @@
+patientArrives 0800 Zoey 2
+patientArrives 0810 Yan 1
+patientArrives 0811 Xavi 5
+patientArrives 0814 Wade 4

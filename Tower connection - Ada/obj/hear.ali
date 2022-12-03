@@ -1,0 +1,172 @@
+V "GNAT Lib v2021"
+M P W=b
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_NESTED_FINALIZATION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U hear%b		hear.adb		b8ed8142 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.doubly_linked_lists%s
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.maps%s	a-strmap.adb		a-strmap.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.unbounded_io%s  a-tiunio.ads	a-tiunio.ali
+W graph%s		graph.adb		graph.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+W text_io%s		text_io.ads		text_io.ali
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-charac.ads		20210520051128 2d3ec45b ada.characters%s
+D a-chlat1.ads		20210520051128 66457d31 ada.characters.latin_1%s
+D a-contai.ads		20210520051128 61e5e089 ada.containers%s
+D a-cdlili.ads		20210520051128 ad05d077 ada.containers.doubly_linked_lists%s
+D a-cdlili.adb		20210520051128 e29ee816 ada.containers.doubly_linked_lists%b
+D a-conhel.ads		20210520051128 20298884 ada.containers.helpers%s
+D a-except.ads		20210520051128 946f3014 ada.exceptions%s
+D a-finali.ads		20210520051128 bf4f806b ada.finalization%s
+D a-inteio.ads		20210520051128 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20210520051128 e4a01f64 ada.io_exceptions%s
+D a-iteint.ads		20210520051128 49a8bee2 ada.iterator_interfaces%s
+D a-stream.ads		20210520051130 119b8fb3 ada.streams%s
+D a-string.ads		20210520051130 90ac6797 ada.strings%s
+D a-strmap.ads		20210520051130 5a88892a ada.strings.maps%s
+D a-sttebu.ads		20210520051130 18209c64 ada.strings.text_buffers%s
+D a-strunb.ads		20210520051130 03325227 ada.strings.unbounded%s
+D a-suteio.ads		20210520051130 26d8e9aa ada.strings.unbounded.text_io%s
+D a-stuten.ads		20210520051130 808c40ad ada.strings.utf_encoding%s
+D a-tags.ads		20210520051130 9eaa38c6 ada.tags%s
+D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
+D a-tiinio.ads		20210520051130 390edddb ada.text_io.integer_io%s
+D a-tiunio.ads		20210520051130 759c6b0c ada.text_io.unbounded_io%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		20210520051130 c3a8ac65 ada.unchecked_deallocation%s
+D graph.ads		20221117175318 0a988a29 graph%s
+D hear.adb		20221117225526 74034db6 hear%b
+D interfac.ads		20210520051132 edec285f interfaces%s
+D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
+D system.ads		20210520051136 2ffa5114 system%s
+D s-atocou.ads		20210520051132 b45c2d8d system.atomic_counters%s
+D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-ficobl.ads		20210520051132 078245e4 system.file_control_block%s
+D s-finmas.ads		20210520051132 1ab4dba8 system.finalization_masters%s
+D s-finroo.ads		20210520051132 4ff27390 system.finalization_root%s
+D s-memory.ads		20210520051134 597d6634 system.memory%s
+D s-parame.ads		20210520051134 4752c4cb system.parameters%s
+D s-pooglo.ads		20210520051134 ede33ef8 system.pool_global%s
+D s-putima.ads		20210520051134 4e095881 system.put_images%s
+D s-secsta.ads		20210520051134 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20210520051134 a7318a92 system.soft_links%s
+D s-stache.ads		20210520051134 a37c21ec system.stack_checking%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+D s-stalib.adb		20210520051134 977290bf system.standard_library%b
+D s-stoele.ads		20210520051134 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20210520051134 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20210520051134 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		20210520051134 7bdda3fa system.stream_attributes%s
+D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
+D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
+D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
+D text_io.ads		20210520051136 21b2c898 text_io%s
+D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
+G a e
+G c Z b b [hear standard 8 11 none]
+G r c none [hear standard 8 11 none] [towerexists graph 21 13 none]
+G r c none [hear standard 8 11 none] [findtower graph 22 13 none]
+G r c none [hear standard 8 11 none] [addtower graph 23 13 none]
+G r c none [hear standard 8 11 none] [addconnection graph 24 14 none]
+G r c none [hear standard 8 11 none] [subconnections graph 25 14 none]
+G r c none [hear standard 8 11 none] [isconnected graph 26 13 none]
+X 1 ada.ads
+16K9*Ada 20e8 27|4r15 4r36 4r62 4r75 4r93 4r116 5r5 5r18 5r39 5r65 5r78 5r96
+X 4 a-contai.ads
+16K13*Containers 28e19 27|4r120
+X 5 a-cdlili.ads
+47k24*Doubly_Linked_Lists 422e39 27|4w131
+X 10 a-inteio.ads
+18K13*Integer_Text_IO[22|46] 27|4w19 5r22
+X 12 a-iteint.ads
+24h9 Forward_Iterator
+32h9 Reversible_Iterator<24R9[5|77]>
+X 14 a-string.ads
+16K13*Strings 35e16 27|4w66 4r79 4r97 5r69 5r82 5r100
+31n32*Outside{31E9} 27|24r35 29r41
+33n37*Both{33E9} 27|23r26 26r56 27r47 31r54 32r62
+X 15 a-strmap.ads
+44K21*Maps 548e21 27|4w87 5r90
+52A9*Character_Set<274A9> 27|15r21 16r27
+129V14*"or"{52A9} 27|16s56
+182V13*To_Set{52A9} 27|15s38 16s44 16s59
+274A9 Character_Set_Internal(boolean)<character>
+X 17 a-strunb.ads
+83K21*Unbounded 765e26 27|4w105 5r108
+88R9*Unbounded_String<9|43R9> 744e15 27|9r13 10r11 11r9 12r10
+91r4*Null_Unbounded_String{88R9} 27|9r33 10r31 11r29 12r30
+104V13*To_Unbounded_String{88R9} 27|22s15
+152V14*"&"{88R9} 27|67s43 69s43
+160V14*"&"{88R9} 27|67s34 69s34
+168V14*"&"{88R9} 27|67s27 69s27
+217V13*Unbounded_Slice{88R9} 27|26s20 31s18 32s14
+245V14*"="{boolean} 27|35s14
+434U14*Find_Token 27|24s7 29s7
+582V13*Delete{88R9} 27|27s20 32s35
+608V13*Trim{88R9} 27|23s15 26s15 27s15 31s13 32s30
+X 21 a-textio.ads
+58K13*Text_IO 725e16 27|4r40 5r43
+313V13*End_Of_File{boolean} 27|21s15
+493V13*Get_Line{string} 27|22s35
+X 23 a-tiunio.ads
+25K21*Unbounded_IO 61e29 27|4w48 5r51
+41U14*Put_Line=43:42 27|67s13 69s13
+X 26 graph.ads
+6K9*graph 27e10 27|6w6 6r17
+8P9*Node(7R9) 27|18r15 19r13
+21V13*towerExists{boolean} 27|37s13 44s13 55s17 55s42
+22V13*findTower{8P9} 27|38s25 45s23 60s25 61s23
+23V13*addTower{8P9} 27|40s25 47s23
+24U14*addConnection 27|50s10
+25U14*subConnections 27|51s10
+26V13*isConnected{boolean} 27|62s28
+X 27 hear.adb
+8U11*Hear 8b11 73l5 73t9
+9r4 Line{17|88R9} 22m7 23m7 23r20 24r19 26r36 27m7 27r27 29r19 31r34 32r42
+10r4 from{17|88R9} 26m7 37r25 38r35 40r34 55r29 60r35 67r29 69r29
+11r4 to{17|88R9} 31m7 44r25 45r33 47r32 55r54 61r33 67r45 69r45
+12r4 key{17|88R9} 32m7 35r10
+13i4 first{positive} 24m44 26r42 27r33 29m50 31r40 32r48
+14i4 last{natural} 24m51 26r49 27r40 29m57 31r47 32r55
+15a4 Space{15|52A9} 24r25
+16a4 Punctuation{15|52A9} 29r25
+17b4 connected{boolean} 57m13 62m15 66r13
+18p4 fromNode{26|8P9} 38m13 40m13 50r24 51r25 60m13 62r40
+19p4 toNode{26|8P9} 45m13 47m13 50r34 51r35 61m13 62r50
+X 30 system.ads
+67M9*Address
+X 37 s-memory.ads
+53V13*Alloc{30|67M9} 103i<c,__gnat_malloc>22
+68U14*Free 104i<c,__gnat_free>22
+76V13*Realloc{30|67M9} 105i<c,__gnat_realloc>22
+X 45 s-stalib.adb
+89U14 Break_Start 90i<c,__gnat_break_start>22
+X 53 text_io.ads
+24K9*Text_IO=24:29 27|4w6 5r9
+

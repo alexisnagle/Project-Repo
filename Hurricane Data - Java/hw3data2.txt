@@ -1,0 +1,17 @@
+hurricanes category3 category2 category1 category4 category5
+category3 FL_cat3 TX_cat3 LA_cat3
+category2 FL_cat2 GA_cat2
+category1 FL_cat1 AL_cat1
+category4 FL_cat4 LA_cat4
+category5 FL_cat5 LA_cat5
+FL_cat3 Easy Betsy Dennis
+TX_cat3 Beulah Celia Alicia
+LA_cat3 Zeta Rita Andrew
+FL_cat2 David Alma Dora
+GA_cat2 Michael David
+FL_cat1 Agnes Inez
+AL_cat1 Dennis Michael Zeta
+FL_cat4 Irma Charley
+LA_cat4 Ida Laura Betsy
+FL_cat5 Michael Andrew
+LA_cat5 Camille

@@ -1,0 +1,7 @@
+tower1 tower2.
+tower2 tower3.
+tower4 tower5.
+tower5 tower6.
+tower3 tower4.
+tower1 tower6?
+tower6 tower1?

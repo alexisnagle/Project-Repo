@@ -1,0 +1,23 @@
+AddEvent 010108 breakfast
+AddEvent 010308 breakfast
+AddEvent 010208 breakfast
+AddEvent 010320 movie
+AddEvent 010110 fluShot
+AddEvent 010312 lunch
+AddEvent 010206 running
+AddEvent 010311 videoGames
+AddEvent 010212 restaurant
+AddEvent 010315 meeting
+AddEvent 010306 swimming
+AddEvent 010108 running
+PrintSkipList
+CancelEvent 010109
+GetEvent 010109
+GetEventsBetweenTimes 010110 010210
+GetEventsForOneDay 0103
+GetEventsForTheRestOfTheDay 010310
+GetEventsFromEarlierInTheDay 010312
+CancelEvent 010311
+CancelEvent 010110
+CancelEvent 010306
+PrintSkipList

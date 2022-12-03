@@ -1,0 +1,297 @@
+V "GNAT Lib v2021"
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTION_PROPAGATION
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_LOCAL_ALLOCATORS
+RV NO_NESTED_FINALIZATION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U graph%b		graph.adb		0f024b2f NE OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.doubly_linked_lists%s
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z system%s		system.ads		system.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+
+U graph%s		graph.ads		a4af0879 EE OO PF PK IL
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.doubly_linked_lists%s
+Z ada.containers.helpers%s  a-conhel.adb	a-conhel.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.finalization%s	a-finali.ads		a-finali.ali
+Z ada.iterator_interfaces%s
+Z ada.streams%s		a-stream.adb		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z ada.unchecked_deallocation%s
+Z system%s		system.ads		system.ali
+Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+Z system.put_images%s	s-putima.adb		s-putima.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-charac.ads		20210520051128 2d3ec45b ada.characters%s
+D a-chlat1.ads		20210520051128 66457d31 ada.characters.latin_1%s
+D a-contai.ads		20210520051128 61e5e089 ada.containers%s
+D a-cdlili.ads		20210520051128 ad05d077 ada.containers.doubly_linked_lists%s
+D a-cdlili.adb		20210520051128 e29ee816 ada.containers.doubly_linked_lists%b
+D a-conhel.ads		20210520051128 20298884 ada.containers.helpers%s
+D a-conhel.adb		20210520051128 fe7a6827 ada.containers.helpers%b
+D a-except.ads		20210520051128 946f3014 ada.exceptions%s
+D a-finali.ads		20210520051128 bf4f806b ada.finalization%s
+D a-ioexce.ads		20210520051128 e4a01f64 ada.io_exceptions%s
+D a-iteint.ads		20210520051128 49a8bee2 ada.iterator_interfaces%s
+D a-stream.ads		20210520051130 119b8fb3 ada.streams%s
+D a-string.ads		20210520051130 90ac6797 ada.strings%s
+D a-strmap.ads		20210520051130 5a88892a ada.strings.maps%s
+D a-sttebu.ads		20210520051130 18209c64 ada.strings.text_buffers%s
+D a-strunb.ads		20210520051130 03325227 ada.strings.unbounded%s
+D a-stuten.ads		20210520051130 808c40ad ada.strings.utf_encoding%s
+D a-tags.ads		20210520051130 9eaa38c6 ada.tags%s
+D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		20210520051130 c3a8ac65 ada.unchecked_deallocation%s
+D graph.ads		20221117175318 0a988a29 graph%s
+D graph.adb		20221117225334 066bc41c graph%b
+D interfac.ads		20210520051132 edec285f interfaces%s
+D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
+D system.ads		20210520051136 2ffa5114 system%s
+D s-atocou.ads		20210520051132 b45c2d8d system.atomic_counters%s
+D s-atocou.adb		20210520051132 b65612c0 system.atomic_counters%b
+D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-ficobl.ads		20210520051132 078245e4 system.file_control_block%s
+D s-finmas.ads		20210520051132 1ab4dba8 system.finalization_masters%s
+D s-finroo.ads		20210520051132 4ff27390 system.finalization_root%s
+D s-memory.ads		20210520051134 597d6634 system.memory%s
+D s-parame.ads		20210520051134 4752c4cb system.parameters%s
+D s-pooglo.ads		20210520051134 ede33ef8 system.pool_global%s
+D s-putima.ads		20210520051134 4e095881 system.put_images%s
+D s-secsta.ads		20210520051134 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20210520051134 a7318a92 system.soft_links%s
+D s-stache.ads		20210520051134 a37c21ec system.stack_checking%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+D s-stalib.adb		20210520051134 977290bf system.standard_library%b
+D s-stoele.ads		20210520051134 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20210520051134 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20210520051134 e9fa2dd8 system.storage_pools%s
+D s-stposu.ads		20210520051134 e251976f system.storage_pools.subpools%s
+D s-stratt.ads		20210520051134 7bdda3fa system.stream_attributes%s
+D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
+D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
+D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
+D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
+G a e
+G c Z s s [empty graph__tower_list 70 13 9_4]
+G c Z s s [has_element graph__tower_list 75 13 9_4]
+G c Z s s [Oeq graph__tower_list 80 13 9_4]
+G c Z s s [length graph__tower_list 82 13 9_4]
+G c Z s s [is_empty graph__tower_list 84 13 9_4]
+G c Z s s [clear graph__tower_list 86 14 9_4]
+G c Z s s [element graph__tower_list 88 13 9_4]
+G c Z s s [replace_element graph__tower_list 90 14 9_4]
+G c Z s s [query_element graph__tower_list 95 14 9_4]
+G c Z s s [update_element graph__tower_list 99 14 9_4]
+G c Z s s [constant_reference graph__tower_list 114 13 9_4]
+G c Z s s [reference graph__tower_list 119 13 9_4]
+G c Z s s [assign graph__tower_list 124 14 9_4]
+G c Z s s [copy graph__tower_list 126 13 9_4]
+G c Z s s [move graph__tower_list 128 14 9_4]
+G c Z s s [insert graph__tower_list 132 14 9_4]
+G c Z s s [insert graph__tower_list 138 14 9_4]
+G c Z s s [insert graph__tower_list 145 14 9_4]
+G c Z s s [prepend graph__tower_list 151 14 9_4]
+G c Z s s [append graph__tower_list 156 14 9_4]
+G c Z s s [append graph__tower_list 161 14 9_4]
+G c Z s s [delete graph__tower_list 165 14 9_4]
+G c Z s s [delete_first graph__tower_list 170 14 9_4]
+G c Z s s [delete_last graph__tower_list 174 14 9_4]
+G c Z s s [reverse_elements graph__tower_list 178 14 9_4]
+G c Z s s [iterate graph__tower_list 180 13 9_4]
+G c Z s s [iterate graph__tower_list 183 13 9_4]
+G c Z s s [swap graph__tower_list 186 14 9_4]
+G c Z s s [swap_links graph__tower_list 190 14 9_4]
+G c Z s s [splice graph__tower_list 194 14 9_4]
+G c Z s s [splice graph__tower_list 199 14 9_4]
+G c Z s s [splice graph__tower_list 205 14 9_4]
+G c Z s s [first graph__tower_list 210 13 9_4]
+G c Z s s [first_element graph__tower_list 212 13 9_4]
+G c Z s s [last graph__tower_list 214 13 9_4]
+G c Z s s [last_element graph__tower_list 216 13 9_4]
+G c Z s s [next graph__tower_list 218 13 9_4]
+G c Z s s [next graph__tower_list 220 14 9_4]
+G c Z s s [previous graph__tower_list 222 13 9_4]
+G c Z s s [previous graph__tower_list 224 14 9_4]
+G c Z s s [find graph__tower_list 226 13 9_4]
+G c Z s s [reverse_find graph__tower_list 231 13 9_4]
+G c Z s s [contains graph__tower_list 236 13 9_4]
+G c Z s s [iterate graph__tower_list 240 14 9_4]
+G c Z s s [reverse_iterate graph__tower_list 244 14 9_4]
+G c Z s s [adjust graph__tower_list__implementation 90 28 266_4_9_4]
+G c Z s s [finalize graph__tower_list__implementation 93 28 266_4_9_4]
+G c Z s s [zero_counts graph__tower_list__implementation 96 17 266_4_9_4]
+G c Z s s [busy graph__tower_list__implementation 100 17 266_4_9_4]
+G c Z s s [unbusy graph__tower_list__implementation 104 17 266_4_9_4]
+G c Z s s [lock graph__tower_list__implementation 108 17 266_4_9_4]
+G c Z s s [unlock graph__tower_list__implementation 112 17 266_4_9_4]
+G c Z s s [tc_check graph__tower_list__implementation 116 17 266_4_9_4]
+G c Z s s [te_check graph__tower_list__implementation 120 17 266_4_9_4]
+G c Z s s [initialize graph__tower_list__implementation 139 28 266_4_9_4]
+G c Z s s [finalize graph__tower_list__implementation 140 28 266_4_9_4]
+G c Z s s [initialize graph__tower_list__implementation 145 28 266_4_9_4]
+G c Z s s [finalize graph__tower_list__implementation 146 28 266_4_9_4]
+G c Z s s [reference_control_typeDA graph__tower_list__implementation 84 12 266_4_9_4]
+G c Z s s [reference_control_typeDF graph__tower_list__implementation 84 12 266_4_9_4]
+G c Z s s [reference_control_typeIP graph__tower_list__implementation 84 12 266_4_9_4]
+G c Z s s [with_busyDF graph__tower_list__implementation 136 12 266_4_9_4]
+G c Z s s [with_busyIP graph__tower_list__implementation 136 12 266_4_9_4]
+G c Z s s [with_lockDF graph__tower_list__implementation 142 12 266_4_9_4]
+G c Z s s [with_lockIP graph__tower_list__implementation 142 12 266_4_9_4]
+G c Z s s [put_image graph__tower_list 290 14 9_4]
+G c Z s s [adjust graph__tower_list 293 25 9_4]
+G c Z s s [read graph__tower_list 297 14 9_4]
+G c Z s s [write graph__tower_list 303 14 9_4]
+G c Z s s [read graph__tower_list 318 14 9_4]
+G c Z s s [write graph__tower_list 324 14 9_4]
+G c Z s s [write graph__tower_list 343 14 9_4]
+G c Z s s [read graph__tower_list 349 14 9_4]
+G c Z s s [write graph__tower_list 365 14 9_4]
+G c Z s s [read graph__tower_list 371 14 9_4]
+G c Z s s [pseudo_reference graph__tower_list 382 13 9_4]
+G c Z s s [get_element_access graph__tower_list 392 13 9_4]
+G c Z s s [listDA graph__tower_list 282 9 9_4]
+G c Z s s [listDF graph__tower_list 282 9 9_4]
+G c Z s s [listIP graph__tower_list 282 9 9_4]
+G c Z s s [cursorIP graph__tower_list 312 9 9_4]
+G c Z s s [constant_reference_typeDI graph__tower_list 333 9 9_4]
+G c Z s s [constant_reference_typeDA graph__tower_list 333 9 9_4]
+G c Z s s [constant_reference_typeDF graph__tower_list 333 9 9_4]
+G c Z s s [constant_reference_typeIP graph__tower_list 333 9 9_4]
+G c Z s s [reference_typeDI graph__tower_list 355 9 9_4]
+G c Z s s [reference_typeDA graph__tower_list 355 9 9_4]
+G c Z s s [reference_typeDF graph__tower_list 355 9 9_4]
+G c Z s s [reference_typeIP graph__tower_list 355 9 9_4]
+G c Z s s [finalize graph__tower_list 409 25 9_4]
+G c Z s s [first graph__tower_list 411 24 9_4]
+G c Z s s [last graph__tower_list 412 24 9_4]
+G c Z s s [next graph__tower_list 414 24 9_4]
+G c Z s s [previous graph__tower_list 418 24 9_4]
+G c Z s s [node_typeIP graph__tower_list 272 9 9_4]
+G c Z s s [iteratorDF graph__tower_list 401 9 9_4]
+G c Z s s [iteratorIP graph__tower_list 401 9 9_4]
+G c Z s s [free graph__tower_list 47 14 9_4]
+G c Z s s [insert_internal graph__tower_list 49 14 9_4]
+G c Z s s [splice_internal graph__tower_list 54 14 9_4]
+G c Z s s [splice_internal graph__tower_list 59 14 9_4]
+G c Z s s [vet graph__tower_list 65 13 9_4]
+G c Z s b [towerexists graph 21 13 none]
+G c Z s b [findtower graph 22 13 none]
+G c Z s b [addtower graph 23 13 none]
+G c Z s b [addconnection graph 24 14 none]
+G c Z s b [subconnections graph 25 14 none]
+G c Z s b [isconnected graph 26 13 none]
+G c Z s s [node_strucDI graph 16 9 none]
+G c Z s s [node_strucDA graph 16 9 none]
+G c Z s s [node_strucDF graph 16 9 none]
+G c Z s s [node_strucIP graph 16 9 none]
+X 1 ada.ads
+16K9*Ada 20e8 23|4r6 4r42 5r5 9r30 24|4r6 4r42
+X 4 a-contai.ads
+16K13*Containers 28e19 23|4r10 9r34 24|4r10
+X 5 a-cdlili.ads
+42+9 Element_Type 23|9r65
+47k24*Doubly_Linked_Lists 422e39 23|4w21 9r45 24|4w21
+54R9*List<10|43R9> 23|11r12[9] 18r20[9]
+65R9*Cursor 23|12r7[9] 13r7[9] 14r7[9]
+68r4*Empty_List{54R9[23|9]} 24|38r31[23|9]
+73r4*No_Element{65R9[23|9]} 24|11r18[23|9] 25r18[23|9] 57r18[23|9] 65r18[23|9]
+. 68r21[23|9] 74r27[23|9] 90r18[23|9]
+88V13*Element{23|8P9} 24|12s13[23|9] 26s13[23|9] 27s20[23|9] 58s30[23|9]
+. 67s15[23|9] 70s16[23|9] 71s30[23|9] 75s33[23|9] 75s45[23|9] 91s13[23|9]
+161U14*Append 24|39s14[23|9] 47s27[23|9]
+210V13*First{65R9[23|9]} 24|10s19[23|9] 24s19[23|9] 56s27[23|9] 64s19[23|9]
+. 67s38[23|9] 73s36[23|9] 89s29[23|9]
+212V13*First_Element{23|8P9} 24|31s14[23|9]
+218V13*Next{65R9[23|9]} 24|15s15[23|9] 29s15[23|9] 59s15[23|9] 76s24[23|9]
+. 79s18[23|9] 81s15[23|9] 94s15[23|9]
+236V13*Contains{boolean} 24|46s31[23|9]
+X 12 a-iteint.ads
+24h9 Forward_Iterator
+32h9 Reversible_Iterator<24R9[5|77]>
+X 14 a-string.ads
+16K13*Strings 35e16 23|4r46 5r9
+X 17 a-strunb.ads
+83K21*Unbounded 765e26 23|4w54 5r17
+88R9*Unbounded_String<10|43R9> 744e15 23|17r13 21r28 22r26 23r25 24|7r28
+. 21r26 35r25
+239V14*"="{boolean} 24|12s29 26s29 70s32 91s29
+X 20 a-textio.ads
+58K13*Text_IO 725e16 24|4w46
+X 23 graph.ads
+6K9*graph 27l5 27e10 24|5b14 98l5 98t10
+7R9*Node_Struc 8r24 16c9 19e14 24|38r16
+8P9*Node(7R9) 9r81 22r51 23r50 24r34 24r44 25r35 25r45 26r31 26r41 24|21r51
+. 35r50 36r10 44r34 44r44 52r35 52r45 86r31 86r41
+9K12*Tower_List[5|47] 10r8
+11r4*Towers{5|54R9[9]} 24|10r12 24r12 31r28 39m7 39r7 64r12
+12r4*C{5|65R9[9]} 24|10m7 11r13 12r21 15m10 15r20 24m7 25r13 26r21 27r28
+. 29m10 29r20 56m7 57r13 58r38 59m10 59r20 64m7 65r13 67r23 71r38 75r41 81m10
+. 81r20 89m7 90r13 91r21 94m10 94r20
+13r4*D{5|65R9[9]} 24|67m10 68r16 70r24 79m13 79r23
+14r4*F{5|65R9[9]} 24|73m16 74r22 75r53 76m19 76r29
+17r7*name{17|88R9} 24|12r24 26r24 70r27 70r39 91r24 91r34
+18r7*connections{5|54R9[9]} 24|46r19 47m15 56r15 67r26 73r24 89r17
+21V13*towerExists{boolean} 21>25 24|7b13 18l8 18t19
+21r25 s{17|88R9} 24|7b25 12r31
+22V13*findTower{8P9} 22>23 24|21b13 32l8 32t17
+22r23 s{17|88R9} 24|21b23 26r31
+23V13*addTower{8P9} 23>22 24|35b13 41l8 41t16
+23r22 s{17|88R9} 24|35b22 38r28
+24U14*addConnection 24>28 24>40 24|44b14 49l8 49t21 58s10 71s16 75s19
+24p28 from{8P9} 24|44b28 46r14 47r10
+24p40 to{8P9} 24|44b40 46r40 47r34
+25U14*subConnections 25>29 25>41 24|52b14 83l8 83t22
+25p29 from{8P9} 24|52b29 58r24 70r34
+25p41 to{8P9} 24|52b41 56r12 71r42 73r21
+26V13*isConnected{boolean} 26>25 26>37 24|86b13 97l8 97t19
+26p25 from{8P9} 24|86b25 89r12
+26p37 to{8P9} 24|86b37 91r31
+X 24 graph.adb
+36p7 n{23|8P9} 38m7 39r21 40r14
+X 27 system.ads
+67M9*Address
+X 35 s-memory.ads
+53V13*Alloc{27|67M9} 103i<c,__gnat_malloc>22
+68U14*Free 104i<c,__gnat_free>22
+76V13*Realloc{27|67M9} 105i<c,__gnat_realloc>22
+X 43 s-stalib.adb
+89U14 Break_Start 90i<c,__gnat_break_start>22
+

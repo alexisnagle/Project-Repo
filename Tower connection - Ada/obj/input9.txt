@@ -1,0 +1,13 @@
+tower3 tower4.
+tower3 tower5. 
+tower3 tower6.
+tower1 tower3.
+tower2 tower3.
+tower1 tower2.
+tower4 tower8.
+tower5 tower7.
+tower6 tower7.
+tower1 tower7?
+tower2 tower7?
+tower1 tower8?
+tower2 tower8?

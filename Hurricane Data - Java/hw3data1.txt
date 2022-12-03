@@ -1,0 +1,10 @@
+hurricanes category3 category2 category1
+category3 FL_cat3 TX_cat3
+category2 FL_cat2 TX_cat2
+category1 FL_cat1 NY_cat1
+FL_cat3 Easy Betsy
+TX_cat3 Beulah Celia Alicia
+FL_cat2 Cleo Alma Dora
+TX_cat2 Rita Ike
+FL_cat1 Agnes Inez
+NY_cat1 Gloria Belle

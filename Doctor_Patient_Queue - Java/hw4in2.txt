@@ -1,0 +1,8 @@
+patientArrives 0800 Zoey 1
+patientArrives 0801 Yan 2
+patientArrives 0805 Xavi 3
+patientArrives 0806 Wade 4
+patientArrives 0808 Victor 2
+patientArrives 0811 Uriah 2
+doctorArrives 0816 Carol
+doctorArrives 0820 David
