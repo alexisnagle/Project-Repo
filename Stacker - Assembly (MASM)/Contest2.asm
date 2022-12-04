@@ -23,6 +23,7 @@ MAX = 15; max chars to read
 playerName BYTE MAX + 1 DUP(? ); stores player name
 playerNameLength DWORD ?
 level BYTE 1
+levelCMP BYTE ? ;use for comparison so it can be set to 0 after comparison
 levelMsg BYTE "Level ", 0
 leaderboardMsg BYTE "Leaderboard",0
 leaderboardHeader BYTE "Name", 11 DUP(" "), "Score", 0
@@ -33,7 +34,7 @@ lostMSG BYTE "You made it to level ", 0
 wonMSG BYTE "You Won level ", 0
 winLine BYTE  10 DUP(" "), "WINNER!", 0
 line BYTE 28 DUP("="), 0
-playAgain BYTE "Would you like to play again? (Y/N)", 0
+newHighScore BYTE 0
 stacker1 BYTE " _______ _________ _______  _______  _        _______  _______", 0Ah, 28 DUP(" "),
 "(  ____ \\__   __/(  ___  )(  ____ \| \    /\(  ____ \(  ____ )", 0Ah, 28 DUP(" "),
 "| (    \/   ) (   | (   ) || (    \/|  \  / /| (    \/| (    )|", 0Ah, 28 DUP(" "),
@@ -42,7 +43,24 @@ stacker2 BYTE "(_____  )   | |   |  ___  || |      |   _ (  |  __)   |     __)",
 "      ) |   | |   | (   ) || |      |  ( \ \ | (      | (\ (   ", 0Ah, 28 DUP(" "),
 "/\____) |   | |   | )   ( || (____/\|  /  \ \| (____/\| ) \ \__", 0Ah, 28 DUP(" "),
 "\_______)   )_(   |/     \|(_______/|_/    \/(_______/|/   \__/", 0
-
+gameover1 BYTE " _______  _______  _______  _______  _______           _______  _______", 0Ah, 24 DUP(" "),
+		     "(  ____ \(  ___  )(       )(  ____ \(  ___  )|\     /|(  ____ \(  ____ )", 0Ah, 24 DUP(" "),
+			"| (    \/| (   ) || () () || (    \/| (   ) || )   ( || (    \/| (    )|", 0Ah, 24 DUP(" "),
+			"| |      | (___) || || || || (__    | |   | || |   | || (__    | (____)|", 0Ah, 24 DUP(" "), 0
+gameover2	BYTE	"| | ____ |  ___  || |(_)| ||  __)   | |   | |( (   ) )|  __)   |     __)", 0Ah, 24 DUP(" "),
+			"| | \_  )| (   ) || |   | || (      | |   | | \ \_/ / | (      | (\ (   ", 0Ah, 24 DUP(" "),
+			"| (___) || )   ( || )   ( || (____/\| (___) |  \   /  | (____/\| ) \ \__", 0Ah, 24 DUP(" "),
+			"(_______)|/     \||/     \|(_______/(_______)   \_/   (_______/|/   \__/", 0
+highscore1 BYTE "         _________ _______           _______  _______  _______  _______  _______ ", 0Ah, 19 DUP(" "),
+			"|\     /|\__   __/(  ____ \|\     /|(  ____ \(  ____ \(  ___  )(  ____ )(  ____ \", 0Ah, 19 DUP(" "),
+			"| )   ( |   ) (   | (    \/| )   ( || (    \/| (    \/| (   ) || (    )|| (    \/", 0Ah, 19 DUP(" "),
+			"| (___) |   | |   | |      | (___) || (_____ | |      | |   | || (____)|| (__    ", 0Ah, 19 DUP(" "), 0
+highscore2 BYTE "|  ___  |   | |   | | ____ |  ___  |(_____  )| |      | |   | ||     __)|  __)   ", 0Ah, 19 DUP(" "),
+			"| (   ) |   | |   | | \_  )| (   ) |      ) || |      | |   | || (\ (   | (      ", 0Ah, 19 DUP(" "),
+			"| )   ( |___) (___| (___) || )   ( |/\____) || (____/\| (___) || ) \ \__| (____/\", 0Ah, 19 DUP(" "),
+			"|/     \|\_______/(_______)|/     \|\_______)(_______/(_______)|/   \__/(_______/", 0
+creditsText BYTE "BY ALEXIS NAGLE, JOHN SELLOCK", 0
+borderWarning BYTE "[Adjust top window border to fit fully with this row on the bottom!] ", 0
 fileName BYTE "Stacker.txt", 0
 scoreFile BYTE "Scores.txt", 0
 BUFSIZE = 5000
@@ -50,9 +68,8 @@ buffer BYTE BUFSIZE DUP(?)
 scoreBuffer BYTE BUFSIZE DUP(?)
 bytesRead DWORD ?
 fileHandle HANDLE ?
-scoredata BYTE 150 DUP(?), 0
-finalScoreData BYTE 150 DUP(? ), 0
-clearScoreData BYTE 150 DUP(? ), 0
+scoredata BYTE 10 DUP(15 DUP(?)), 0
+finalScoreData BYTE 10 DUP(15 DUP(?)), 0
 prevIndex DWORD 0
 offsetIndex DWORD 0
 outFileBufferSize DWORD 0
@@ -80,6 +97,8 @@ INVOKE SetConsoleCursorInfo, consoleHandle, ADDR cursorInfo; pass a pointer to C
 	mov eax, fileHandle
 	call CloseFile
 .ENDIF
+
+call BeginTransitionAnimation
 call ScreenDisplaySetup
 call writeScores; writes leaderboard to the screen
 
@@ -152,6 +171,7 @@ WelcomeScreen PROC
 mov eax, white + (lightBlue * 16)
 call SetTextColor
 call Clrscr
+
 ; print stacker heading
 mov dl, 28
 mov dh, 9
@@ -160,6 +180,15 @@ mov edx, OFFSET stacker1
 call WriteString
 mov edx, OFFSET stacker2
 call WriteString
+
+
+; Warns the player to adjust their window size to fit the game
+mov dl, 28
+mov dh, 41
+call Gotoxy
+mov edx, OFFSET borderWarning
+call WriteString
+
 
 ; print name input message
 mov dl, 28
@@ -172,8 +201,124 @@ mov  ecx, MAX
 call ReadString
 mov playerNameLength, eax
 
+
+
 ret
 WelcomeScreen ENDP
+
+; ---------------------------------------------------- -
+BeginTransitionAnimation PROC
+;
+; Displays the animation that plays before game loads
+; Recieves:
+; Returns:
+; ---------------------------------------------------- -
+
+mov dh, 0		; row
+mov dl, 0		; column
+
+mov eax, black + (black * 16)
+.IF numberBlocks < 1
+	.IF newHighscore == 1
+		mov eax, green + (green * 16)
+	.ELSE
+		mov eax, red + (red * 16)
+	.ENDIF
+.ENDIF
+
+
+call SetTextColor
+mov al, " "
+
+mov ecx, 60					; Printing 75 columns of 2 characters width
+animationXLoop:
+	call Gotoxy
+	mov bl, dl				; Store a copy of the X for animationLeftXLoop
+	push ecx					; Save animationRightXLoop counter
+	mov ecx, 21				; Printing a column 15 characters tall
+	animationRightYLoop:
+		call Gotoxy
+		call WriteChar
+		call WriteChar
+		inc dh
+	loop animationRightYLoop
+	push edx
+
+	mov dl, 118
+	sub dl, bl; Calculates correct rightward horizontal position of this column
+	mov ecx, 21
+	animationLeftYLoop:
+		call Gotoxy
+		call WriteChar
+		call WriteChar
+		inc dh
+	loop animationLeftYLoop
+	pop edx
+
+	pop ecx					; Restore animationRightXLoop counter
+	
+	add dl, 2					; Move to next column
+	mov dh, 0
+
+	mov eax, 20				; Delay printing of next column for visual clarity
+	call Delay
+
+loop animationXLoop
+
+
+.IF numberBlocks < 1
+	.IF newHighscore == 1
+		mov eax, white + (green * 16)
+		call SetTextColor
+		; print gameover screen
+		call clrscr
+		mov dl, 19
+		mov dh, 9
+		call Gotoxy
+		mov edx, OFFSET highscore1
+		call WriteString
+		mov edx, OFFSET highscore2
+		call WriteString
+	.ELSE
+		mov eax, white + (red * 16)
+		call SetTextColor
+		; print gameover screen
+		call clrscr
+		mov dl, 24
+		mov dh, 9
+		call Gotoxy
+		mov edx, OFFSET gameover1
+		call WriteString
+		mov edx, OFFSET gameover2
+		call WriteString
+	.ENDIF
+.ELSE
+	mov eax, white + (black * 16)
+	call SetTextColor
+	; print stacker heading
+	call clrscr
+	mov dl, 28
+	mov dh, 9
+	call Gotoxy
+	mov edx, OFFSET stacker1
+	call WriteString
+	mov edx, OFFSET stacker2
+	call WriteString
+
+	mov dl, 45
+	mov dh, 20
+	call Gotoxy
+	mov edx, OFFSET creditsText
+
+	call WriteString
+	mov eax, 1200
+	call Delay
+
+	call Clrscr; Clear any leftover blue screen characters
+.ENDIF
+
+ret
+BeginTransitionAnimation ENDP
 
 ; ---------------------------------------------------- -
 ScreenDisplaySetup PROC
@@ -184,7 +329,7 @@ ScreenDisplaySetup PROC
 ; ---------------------------------------------------- -
 mov eax, white + (black * 16)
 call SetTextColor
-call Clrscr
+;call Clrscr
 
 ; Print Sidebar -- stored in file at fileName
 mov EDX, OFFSET fileName
@@ -265,9 +410,9 @@ l2 :
 	ret
 	ScreenDisplaySetup ENDP
 
-	; ---------------------------------------------------- -
-	Print PROC
-	;
+; ---------------------------------------------------- -
+  Print PROC
+;
 ; Print out blocks onto the current row
 ; Recieves:
 ; Returns:
@@ -486,7 +631,6 @@ mov firstXPos, eax
 	call ClearLine; clear the line of blocks on the screen
 	mov printOffset, 0
 
-	; TODO: Adjust printXPosand other Print proc vars to work based on this situation
 	mov eax, currXPos
 	sub eax, firstXPos; This difference is the number of offsets
 	jz stopBlocksExit; Skips calculating offset if zero
@@ -496,7 +640,7 @@ mov firstXPos, eax
 	.ENDIF
 
 	mov ecx, eax
-	NewOffset : ;
+	NewOffset :
 add printOffset, 4
 loop NewOffset
 
@@ -550,10 +694,27 @@ call Gotoxy
 	call main	;reset to play next level of the game 
 
 .ELSE
-	mov dh, 10
-	mov dl, 50
+	call editScores; updates finalScoreData
+
+	; write finalScoreData to the file
+	lea EDX, scoreFile
+	call CreateOutputFile
+	mov fileHandle, eax
+	lea edx, finalScoreData
+	mov ecx, outFileBufferSize
+	call WriteToFile
+	mov eax, fileHandle
+	call CloseFile
+
+	call BeginTransitionAnimation
+	mov dh, 30
+	mov dl, 47
 	call Gotoxy
-	mov eax, white + (red * 16)
+	.IF newHighscore == 1
+		mov eax, white + (green * 16)
+	.ELSE
+		mov eax, white + (red * 16)
+	.ENDIF
 	call SetTextColor
 	mov edx, OFFSET lostMsg
 	call WriteString
@@ -561,72 +722,10 @@ call Gotoxy
 	call WriteDec
 .ENDIF
 
-call editScores; updates finalScoreData
-
-; write finalScoreData to the file
-lea EDX, scoreFile
-call CreateOutputFile
-mov fileHandle, eax
-lea edx, finalScoreData
-mov ecx, outFileBufferSize
-call WriteToFile
-mov eax, fileHandle
-call CloseFile
-
-;clear scoredata
-mov ecx, 150
-clearData:
-	mov esi, 150
-	sub esi, ecx
-	mov scoreData[esi], 0h
-	loop clearData
-
-mov prevIndex, ecx
-mov offsetIndex, ecx
-mov index, cl
-
-
-;update leaderboard on the screen
-lea EDX, scoreFile
-call openInputFile
-mov fileHandle, eax
-call readScoreFile
-mov eax, fileHandle
-call CloseFile
-call writeScores
-
-
-
-	; Move to bottom of the screen so nothing is cut off
-mov dh, 39
 mov dl, 0
+mov dh, 44
 call Gotoxy
-mov eax, white + (black * 16)
-call SetTextColor
-
-mov edx, OFFSET playAgain
-call WriteString
-
-; decision to play again
-input :
-call ReadKey
-.IF al == 059h
-	call ResetValues
-	mov ah, 1
-	mov level, ah
-	call main
-.ELSEIF al == 079h
-	call ResetValues
-	mov ah, 1
-	mov level, ah
-	call main
-.ELSEIF al == 04Eh
-	call ExitProcess
-.ELSEIF al == 06Eh
-	call ExitProcess
-.ELSE
-	jmp input
-.ENDIF
+call ExitProcess
 ret
 EndGame ENDP
 
@@ -655,6 +754,7 @@ mov printOffset, eax
 
 mov eax, 160
 mov delayVal, eax
+
 ret
 ResetValues ENDP
 
@@ -746,12 +846,14 @@ writeScores ENDP
 
 ; Still in progress 
 editScores PROC
-	; move new data into correct position in scoredataand write updated data into file
+	; move new data into correct position in scoredata and write updated data into file
 	; look at every other value(aka the scores) compare to newScore
 	; if higher than new score write itand the corresponding player to the fileand loop again
 	; if lower than new score write new scoreand player to the file, then write remaining players up to five
 	call crlf
 	call crlf
+	mov al, level
+	mov levelCMP, al
 	mov ecx, 5	;5 players are stored
 	mov esi, 0
 	loopPlayers:
@@ -779,7 +881,7 @@ editScores PROC
 			sub bh, 48						;ascii to decimal
 		.ENDIF
 		add bl, bh
-		cmp bl, level	;compare the score to the level the player is on 
+		cmp bl, levelCMP ;compare the score to the level the player is on
 		jb below		;if the stored score is below the new players score
 		jnb above		;if the stored score is above the new players score
 
@@ -822,6 +924,9 @@ editScores PROC
 		jmp loopPLayers
 
 		below:
+		.IF ecx == 5
+			mov newHighScore, 1
+		.ENDIF
 		push ecx
 		mov ecx, playerNameLength
 		copyName:
@@ -854,7 +959,7 @@ editScores PROC
 			mov bl, 2Ch
 			mov finalScoreData[esi], bl
 			inc esi
-		mov level, 0	; so it wont be reinserted again
+		mov levelCMP, 0	; so it wont be reinserted again
 		pop ecx
 		dec ecx
 		mov eax, 2
