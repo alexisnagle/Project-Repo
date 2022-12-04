@@ -1,5 +1,5 @@
 # Project Repo
-This repository contains a collection of my projects from throughout college. I projects in a variety of languages including MASM Assembly, Ada, Haskell, Python, and Java; with Python and Java being the main languages used. 
+This repository contains a collection of my projects from throughout college. The projects in a variety of languages including MASM Assembly, Ada, Haskell, Python, and Java; with Python and Java being the main languages used. 
 
 ## Java
 ### Calander
