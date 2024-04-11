@@ -38,6 +38,12 @@ https://github.com/alexisnagle/Project-Repo/assets/97808552/0266fbdc-ac52-41a3-b
 #### Animation 2: Two Crowds Meeting at an Intersection
 https://github.com/alexisnagle/Project-Repo/assets/97808552/30cab9a3-6237-48be-85fc-b885f8f918eb
 
+### Inverse Kinematics Robot Animation
+In this Program I was tasked with using Vedo to replicate a robot arm then utilize an inverse kinematics algortihm to find the best path utilizing changing the angles of the robot's joints in order to reach an end goal.
+
+https://github.com/alexisnagle/Project-Repo/assets/97808552/49cf10a5-657a-4eb4-a8d7-9b1f8cc01c8b
+
+
 
 ## Ada
 ### Tower Connection
