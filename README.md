@@ -30,6 +30,15 @@ In this program I was given a database of doctors and was tasked with displaying
 ### Recipe UI
 In this program I was given a JSON file containing recipies and was tasked with creating a user interface to display the recipies. First I processed the JSON file and stored the needed information for each recipe into a list. I then created a user interface to display the first 16 recipies in the list. The user interface also has an option for users to search the recipies and that will display the first 16 recipies that match the description.
 
+### Crowd Simulation Animation
+In this program I was tasked with approaching teo common crowd simulation tasks. To approach these, I utilized Vedo to draw the board and people on the board. I then calculated a cost function for the goal and the obstacles given. From here the resulting cost matrix is used to calculate a gradient, the gradient is then used to determine the movement for each person. Everytime a person moves the cost and gradient are recalculated.
+#### Animation 1: Crowd Moving out of a Room with an Obstacle
+https://github.com/alexisnagle/Project-Repo/assets/97808552/0266fbdc-ac52-41a3-be95-cd8cb74ef202
+
+#### Animation 2: Two Crowds Meeting at an Intersection
+https://github.com/alexisnagle/Project-Repo/assets/97808552/30cab9a3-6237-48be-85fc-b885f8f918eb
+
+
 ## Ada
 ### Tower Connection
 In this program I was tasked with inputting a list of one way tower connection and queries and outputting whether or not the queries were connected. To do so I implemented a singly linked list that held tower nodes, containg a name and a list of their connections. Each time a connection was read in the program searched for the tower with the specified name, if one didnt exist it then made a new node, and it would then list the connection under the list of connections. When a query was made it would once again search for the "from" node, if not found it automatically states false, then would look within that nodes connection to see if the "to" node was listed.
